@@ -2,7 +2,6 @@ from aiogram import Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
 from config import buttons_dict
-import emoji
 
 main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Работа с клиентами', callback_data='client')]
@@ -67,9 +66,9 @@ def add_first_proc_button(keyboard: InlineKeyboardBuilder):
 async def inline_client():
     keyboard = InlineKeyboardBuilder()
     add_pattern_button(keyboard)
-    keyboard.add(InlineKeyboardButton(text='Софтик', callback_data='soft')),
+    keyboard.add(InlineKeyboardButton(text='Софтик', callback_data='soft'))
     keyboard.add(InlineKeyboardButton(text='Аббревиатуры', callback_data='abbr'))
-    keyboard.add(InlineKeyboardButton(text='Процедуры', callback_data='proc')),
+    keyboard.add(InlineKeyboardButton(text='Процедуры', callback_data='proc'))
     keyboard.add(InlineKeyboardButton(text='Полезные ссылки', callback_data='usefullurl'))
     add_back2_button(keyboard)
     return keyboard.adjust(1).as_markup()
@@ -92,7 +91,7 @@ def add_pattern_button(keyboard: InlineKeyboardBuilder):
 
 async def inline_patterns():
     keyboard = InlineKeyboardBuilder()
-    keyboard.add(InlineKeyboardButton(text='Pro', callback_data='tinkoffpro'))
+    keyboard.add(InlineKeyboardButton(text='Pro', callback_data='pro_subscription'))
     keyboard.add(InlineKeyboardButton(text='Программы лояльности', callback_data='creditcardpromotion'))
     keyboard.add(InlineKeyboardButton(text='Переводы', callback_data='transfers'))
     keyboard.add(InlineKeyboardButton(text='Лимиты', callback_data='limits'))
